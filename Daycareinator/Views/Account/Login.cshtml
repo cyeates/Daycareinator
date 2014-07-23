@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_UnauthorizedLayout.cshtml";
+    
+}
+@model Daycareinator.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+
+<div class="row-fluid">
+    <div class="widget container-narrow">
+        <div class="widget-header">
+            <i class="icon-user"></i>
+            <h5>Log in to your account</h5>
+        </div>
+        <div class="widget-body clearfix" style="padding: 25px;">
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+
+                if (!String.IsNullOrEmpty(ViewBag.LoginError))
+                {
+                <div class="alert alert-error">
+                    @ViewBag.LoginError
+                </div>
+                }
+                            
+                           
+                <div class="control-group">
+                    <div class="controls">
+                        @* <input class="btn-block" type="text" id="inputEmail" placeholder="Email">*@
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "btn-block", @placeholder = "Email" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        @Html.PasswordFor(m => m.Password, new { @class = "btn-block", @placeholder = "Password" })
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls clearfix">
+
+                        @* @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox pull-left", @style="width: auto" })*@
+                        <label style="width: auto" class="checkbox pull-left">
+
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            Remember me
+                        </label>
+                        @Html.ActionLink("Forgot Password?", "ForgotPassword", new { }, new { @class = "pull-right", @style = "padding: 5px 0px 0px 5px;" })
+                        @*<a style="padding: 5px 0px 0px 5px;" href="#" class="pull-right">Forgot Password?</a>*@
+                    </div>
+                </div>
+                <button type="submit" class="btn pull-right">Sign in</button>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

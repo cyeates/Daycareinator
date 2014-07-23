@@ -1,0 +1,136 @@
+﻿@{
+    Layout = null;
+ 
+   var currentController = ViewContext.RouteData.Values["controller"] as string ?? "Home";
+   var currentAction = ViewContext.RouteData.Values["action"] as string ?? "Index";
+   var currentPage = (currentController + "-" + currentAction ).ToLower();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Walden Payroll and Bookkeeping</title>
+     @Styles.Render("~/Content/marketing/css/bundles")
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700,400italic|Open+Sans+Condensed:300">
+</head>
+<body class="body-bg-image2 image-background">
+    <div id="page-wrapper">
+        <header id="header">
+            <div class="container">
+                <!-- 1152 pixels Container -->
+                <div class="sixteen columns">
+
+                    <!-- Logo -->
+                    <div id="logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="@Url.Content("~/Content/marketing/images/logo.png")" alt="Walden CPB">
+                        </a>
+                    </div>
+
+                    <!-- Navigation -->
+                    <nav id="navigation" style="float: right; margin-top: 25px; margin-left: 0px;">
+                        <div id="primary-nav" style="float: right;">
+
+                            <ul id="main-menu" class="sf-js-enabled sf-shadow">
+                                <li>
+                                    @*<a href="@Url.Action("Index", "Home")" class="sf-with-ul">Home</a>*@
+                                    @Html.ActionLink("Home", "Index", "Home", null, new {@class = currentPage == "home-index" ? "current sf-with-ul" : "sf-with-ul" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("About", "About", "Home", null, new {@class = currentPage == "home-about" ? "current sf-with-ul" : "sf-with-ul" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Contact", "Contact", "Home", null, new {@class = currentPage == "home-contact" ? "current sf-with-ul" : "sf-with-ul" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Client Portal", "Login", "Account", null, new {@class="sf-with-ul"})
+                                </li>
+                            </ul>
+
+                            <!--<select class="selectnav" id="selectnav1"><option value="">Select a page...</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/index.html" selected="">Home</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/index.html">- Home Page 1</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/index2.html">- Home Page 2</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/about-us.html">Page Templates</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/about-us.html">- About Us</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/services.html">- Services Page 1</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/services-page-2.html">- Services Page 2</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/team.html">- Team</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/member-profile.html">-- Member Profile</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/gallery.html">- Gallery</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/fullwidth-page.html">- Full-width Page</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-2-columns.html">Portfolio</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-1-column.html">- 1 Column</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-2-columns.html">- 2 Columns</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-3-columns.html">- 3 Columns</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-3-columns-fullwidth.html">- 3 Columns Full-width</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/portfolio-4-columns-fullwidth.html">- 4 Columns Full-width</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project.html">- Single Project</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-gallery-slider.html">- Project with Gallery Slider</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-slideshow.html">- Project with Slideshow</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-video-youtube.html">- Project with Video</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-video-youtube.html">-- YouTube Video</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-video-vimeo.html">-- Vimeo Video</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-project-video-html5.html">-- HTML5 Video</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/blog.html">Blog</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/blog.html">- Large Image</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/blog-medium-image.html">- Medium Image</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/single-post.html">- Single Post</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/typography.html">Features</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/typography.html">- Typography</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/columns.html">- Columns</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/elements.html">- Elements</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/media.html">- Media and Sliders</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/pricing-tables.html">- Pricing Tables</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/contact.html">Contact</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/contact.html">- Default Layout</option><option value="file:///C:/Users/Chad/Dropbox/Daycare%20Files/Tectonic%20Template/tectonic/contact2.html">- Alternative Layout</option></select>-->
+
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- END HEADER -->
+
+
+        <!-- START CONTENT -->
+
+        <section id="main" class="container">
+            @RenderBody()
+        </section>
+
+        <!-- END CONTENT -->
+
+
+        <!-- START FOOTER -->
+
+        <footer id="footer">
+          <div class="container"> <!-- 1152 pixels Container -->
+	
+		<!-- Contact Details -->
+		<div class="one-third column" id="contact-details">
+			<div>
+				<p>Connect with Us</p>
+				<h2 class="phone-number">(817) 901-4004</h2>
+				<a href="mailto:don@waldencpb.com">don@waldencpb.com</a>
+			</div>
+		</div>
+		
+		<div class="two-thirds column" id="footer-links">
+			<!--<img src="@Url.Content("~/Content/marketing/images/nacpbmember_logo.gif")" />-->
+			<!-- Social Icons -->
+			@*<ul class="social-icons clearfix">
+				<li class="twitter"><a href="#">Twitter</a></li>
+				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="pinterest"><a href="#">Pinterest</a></li>
+				<li class="linkedin"><a href="#">LinkedIn</a></li>
+			</ul>*@
+			
+			<!-- Footer Navigation -->
+			@*<ul class="footer-nav clearfix">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about-us.html">About</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="portfolio-2-columns.html">Portfolio</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>*@
+			
+			<div class="clear"></div> <!-- IE7 margin-bottom fix -->
+			
+		</div>
+		
+	</div>
+        </footer>
+
+        <footer id="footer-bottom">
+            <div class="container"> <!-- 1152 pixels Container -->
+		<div class="sixteen columns">
+			
+			<div class="twelve columns alpha">
+				 <ul class="links clearfix">
+			    <li>© @DateTime.Now.Year.ToString() Walden Payroll and Bookkeeping<span></span></li>
+		    </ul>
+			</div>
+				
+			
+			
+		</div>
+	</div>
+           
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/marketing")
+    <script src="~/Scripts/Marketing/waldencpb.contact.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.Web", "Daycareinator\Daycareinator.Web.csproj", "{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.Data.Entities", "Daycareinator.Data.Entities\Daycareinator.Data.Entities.csproj", "{05544294-1795-43B2-9BF5-2D790A77A8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.Data", "Daycareinator.Data\Daycareinator.Data.csproj", "{76AEFD15-44BD-4727-AF7A-43A8A8E44153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.Domain", "Daycareinator.Domain\Daycareinator.Domain.csproj", "{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{B67A09B2-39F2-4A2D-A5E1-89B14C28F0CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.UnitTests", "UnitTests\Daycareinator.UnitTests.csproj", "{A3E587C1-32E1-4972-A40B-8B96B1A542D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daycareinator.Resources", "Daycareinator.Resources\Daycareinator.Resources.csproj", "{246B0E6C-AB44-4E8C-B39A-D3B1DE13E0B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05544294-1795-43B2-9BF5-2D790A77A8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05544294-1795-43B2-9BF5-2D790A77A8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05544294-1795-43B2-9BF5-2D790A77A8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05544294-1795-43B2-9BF5-2D790A77A8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76AEFD15-44BD-4727-AF7A-43A8A8E44153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76AEFD15-44BD-4727-AF7A-43A8A8E44153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76AEFD15-44BD-4727-AF7A-43A8A8E44153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76AEFD15-44BD-4727-AF7A-43A8A8E44153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E587C1-32E1-4972-A40B-8B96B1A542D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E587C1-32E1-4972-A40B-8B96B1A542D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E587C1-32E1-4972-A40B-8B96B1A542D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E587C1-32E1-4972-A40B-8B96B1A542D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246B0E6C-AB44-4E8C-B39A-D3B1DE13E0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246B0E6C-AB44-4E8C-B39A-D3B1DE13E0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246B0E6C-AB44-4E8C-B39A-D3B1DE13E0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246B0E6C-AB44-4E8C-B39A-D3B1DE13E0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3E587C1-32E1-4972-A40B-8B96B1A542D9} = {B67A09B2-39F2-4A2D-A5E1-89B14C28F0CE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Security.Cryptography.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

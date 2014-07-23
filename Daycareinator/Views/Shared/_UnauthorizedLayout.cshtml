@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrap/css/bundles")
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div class="logo">
+                       <img src="@Url.Content("~/Content/bootstrap/img/logo.png")" alt="Walden CPB">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 10px;">
+
+            @RenderBody()
+
+        </div>
+
+   
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/third-party")
+    @Scripts.Render("~/bundles/app")
+     @RenderSection("scripts", required: false)
+</body>
+</html>
+

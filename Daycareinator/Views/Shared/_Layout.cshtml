@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Walden CPB</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrap/css/bundles")
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="wrap">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <img src="@Url.Content("~/Content/bootstrap/img/logo.png")" alt="Walden CPB">
+                    </div>
+                    <div class="top-menu visible-desktop">
+                        <ul class="pull-right">
+                            <li>
+                                <div class="dropdown user-profile">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">@User.Identity.Name&nbsp;<i class="icon-chevron-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        @*<li><a href="#">Change Password</a></li>*@
+                                        <li><a href="@Url.Action("LogOff", "Account")">Logout</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <!--<a href="@Url.Action("LogOff", "Account")"><i class="icon-off"></i>&nbsp;Logout</a>-->
+                            </li>
+
+
+                            @*@Html.Partial("_LoginPartial")*@
+                        </ul>
+                    </div>
+                    @*<div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Children", "Index", "Children")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>*@
+                    <!--/.nav-collapse -->
+
+                </div>
+            </div>
+        </div>
+
+        <div id="container-fluid">
+            <!--Side menu-->
+            <div class="sidebar-nav nav-collapse collapse">
+                <div class="accordion">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="@Url.Action("Index", "Home")" class="accordion-toggle">
+                                <i class="icon-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="@Url.Action("Index", "Employees")" class="accordion-toggle">
+                                <i class="icon-group"></i>
+                                <span>Employees</span>
+                            </a>
+                        </div>
+                    </div>
+                    @* <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a href="@Url.Action("Index", "Children")" class="accordion-toggle">
+                            <i class="icon-group"></i>
+                            <span>Children</span>
+                        </a>
+                    </div>
+                </div>*@
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="@Url.Action("Index", "Timecards")" class="accordion-toggle">
+                                <i class="icon-time"></i>
+                                <span>Timecards</span>
+                            </a>
+                        </div>
+                    </div>
+                    @if (Roles.IsUserInRole(User.Identity.Name, "Admin"))
+                    {
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a href="@Url.Action("Index", "Users")" class="accordion-toggle">
+                                    <i class="icon-user"></i>
+                                    <span>Users</span>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!--Close Side Menu -->
+            <!-- Main Window-->
+            <div class="main_container">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+
+        </div>
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/third-party")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

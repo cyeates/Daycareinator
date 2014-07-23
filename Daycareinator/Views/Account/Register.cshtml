@@ -1,0 +1,32 @@
+﻿@using TwitterBootstrapMVC;
+@model Daycareinator.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_UnauthorizedLayout.cshtml";
+}
+
+<h2 class="heading">@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    
+    
+   
+   
+    @Html.Bootstrap().ControlGroup().TextBoxFor(m => m.FirstName)
+    @Html.Bootstrap().ControlGroup().TextBoxFor(m => m.LastName)
+    @Html.Bootstrap().ControlGroup().PasswordFor(m => m.Password)
+    @Html.Bootstrap().ControlGroup().PasswordFor(m => m.ConfirmPassword)
+       
+    @Html.HiddenFor(m => m.UserName)
+    @Html.HiddenFor(m => m.Token)
+           
+    <button type="submit" class="btn">Register</button>
+    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

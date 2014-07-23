@@ -1,0 +1,1140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85698FD0-6F4B-4A84-8982-95FB7C1F53E4}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Daycareinator</RootNamespace>
+    <AssemblyName>Daycareinator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EfficientlyLazy.Crypto">
+      <HintPath>..\packages\EfficientlyLazy.Crypto.0.9.2\lib\net40\EfficientlyLazy.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.AspNet">
+      <HintPath>..\packages\Glimpse.AspNet.1.3.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\packages\Glimpse.1.4.2\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc4">
+      <HintPath>..\packages\Glimpse.Mvc4.1.3.2\lib\net40\Glimpse.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="T4MVCExtensions">
+      <HintPath>..\packages\T4MVCExtensions.3.6.5\lib\net40\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="TwitterBootstrapMVC">
+      <HintPath>..\packages\TwitterBootstrapMVC.2.4.2\lib\net40\TwitterBootstrapMVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc4">
+      <HintPath>..\packages\Unity.Mvc4.1.1.0.0\lib\net40\Unity.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.0.10\lib\net40\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebApiContrib.Formatting.Jsonp">
+      <HintPath>..\packages\WebApiContrib.Formatting.Jsonp.0.9.6.0\lib\net40\WebApiContrib.Formatting.Jsonp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Packages\TaskHelpers.Sources.0.2\TaskHelpers.cs" />
+    <Compile Include="App_Packages\TaskHelpers.Sources.0.2\TaskHelpersExtensions.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\EmployeeController.cs" />
+    <Compile Include="Controllers\api\RecordController.cs" />
+    <Compile Include="Controllers\api\TimecardController.cs" />
+    <Compile Include="Controllers\api\UserController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\api\ChildApiController.cs" />
+    <Compile Include="Controllers\ChildrenController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TimecardsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="Filters\AuthorizeEmployeeAccess.cs" />
+    <Compile Include="FormatterConfig.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\IMembershipWrapper.cs" />
+    <Compile Include="Membership\SimpleMembershipInitializer.cs" />
+    <Compile Include="Membership\SimpleMembershipWrapper.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Children\ChildGridModel.cs" />
+    <Compile Include="Models\Children\ChildGridModelBuilder.cs" />
+    <Compile Include="Models\Children\ChildModel.cs" />
+    <Compile Include="Models\Children\ChildModelBuilder.cs" />
+    <Compile Include="Models\Employees\EmployeeModel.cs" />
+    <Compile Include="Models\Employees\EmployeeModelBuilder.cs" />
+    <Compile Include="Models\Employees\EmployeesModel.cs" />
+    <Compile Include="Models\Home\ContactForm.cs" />
+    <Compile Include="Models\Timecards\DateModel.cs" />
+    <Compile Include="Models\Timecards\EmployeeTimecard.cs" />
+    <Compile Include="Models\Timecards\TimecardEntry.cs" />
+    <Compile Include="Models\Timecards\TimecardsModel.cs" />
+    <Compile Include="Models\Timecards\TimecardsModelBuilder.cs" />
+    <Compile Include="Models\Timecards\EmployeeTimecardUpdateModel.cs" />
+    <Compile Include="Models\Timecards\TimecardUpdateModel.cs" />
+    <Compile Include="Models\Users\UserModel.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\bootstrap\css\alertify.css" />
+    <Content Include="Content\bootstrap\css\datepicker.css" />
+    <Content Include="Content\bootstrap\css\daycareinator.css" />
+    <Content Include="Content\bootstrap\css\font-awesome.css" />
+    <Content Include="Content\bootstrap\css\font-awesome.min.css" />
+    <Content Include="Content\bootstrap\font\fontawesome-webfont.svg" />
+    <Content Include="Content\bootstrap\img\ajax-loader.gif" />
+    <Content Include="Content\bootstrap\img\dotted.png" />
+    <Content Include="Content\bootstrap\img\logo.png" />
+    <Content Include="Content\bootstrap\js\bootstrap-datepicker.js" />
+    <Content Include="Content\marketing\css\base.css" />
+    <Content Include="Content\marketing\css\carousel.css" />
+    <Content Include="Content\marketing\css\colors\beige.css" />
+    <Content Include="Content\marketing\css\colors\blue.css" />
+    <Content Include="Content\marketing\css\colors\brown.css" />
+    <Content Include="Content\marketing\css\colors\dark-yellow.css" />
+    <Content Include="Content\marketing\css\colors\green.css" />
+    <Content Include="Content\marketing\css\colors\maroon.css" />
+    <Content Include="Content\marketing\css\colors\navy.css" />
+    <Content Include="Content\marketing\css\colors\olive-green.css" />
+    <Content Include="Content\marketing\css\colors\orange.css" />
+    <Content Include="Content\marketing\css\colors\red.css" />
+    <Content Include="Content\marketing\css\colors\sea-green.css" />
+    <Content Include="Content\marketing\css\colors\violet.css" />
+    <Content Include="Content\marketing\css\grid.css" />
+    <Content Include="Content\marketing\css\layout.css" />
+    <Content Include="Content\marketing\css\prettyPhoto.css" />
+    <Content Include="Content\marketing\css\prettyPhoto.default.css" />
+    <Content Include="Content\marketing\css\switcher.css" />
+    <Content Include="Content\marketing\images\about-us-1.jpg" />
+    <Content Include="Content\marketing\images\about-us-2.jpg" />
+    <Content Include="Content\marketing\images\about-us-3.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img1-cropped.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img1-tn.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img1.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img2-cropped.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img2-tn.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img2.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img3-cropped.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img3-tn.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img3.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img4-cropped.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img4-tn.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\bg-img4.jpg" />
+    <Content Include="Content\marketing\images\backgrounds\body-gradient-bg.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-45degreee-fabric.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-bright-squares.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-brushed-alu.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-chruch.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-cork1.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-fabric-plaid.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-grunge-wall.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-husk.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-light-alu.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-project-papper.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-scribble-light.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern-smooth-wall.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern1-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern10-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern11-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern12-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern2-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern3-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern4-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern5-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern6-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern7-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern8-tn.png" />
+    <Content Include="Content\marketing\images\backgrounds\pattern9-tn.png" />
+    <Content Include="Content\marketing\images\blog\author.jpg" />
+    <Content Include="Content\marketing\images\blog\post1-full.jpg" />
+    <Content Include="Content\marketing\images\blog\post1-medium.jpg" />
+    <Content Include="Content\marketing\images\blog\post1.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-full-slide1.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-full-slide2.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-full-slide3.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-medium-slide1.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-medium-slide2.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-medium-slide3.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-slide1.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-slide2.jpg" />
+    <Content Include="Content\marketing\images\blog\post2-slide3.jpg" />
+    <Content Include="Content\marketing\images\blog\post3-full.jpg" />
+    <Content Include="Content\marketing\images\blog\post3-medium.jpg" />
+    <Content Include="Content\marketing\images\blog\post3.jpg" />
+    <Content Include="Content\marketing\images\gallery\img1-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img1-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img1.jpg" />
+    <Content Include="Content\marketing\images\gallery\img2-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img2-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img2.jpg" />
+    <Content Include="Content\marketing\images\gallery\img3-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img3-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img3.jpg" />
+    <Content Include="Content\marketing\images\gallery\img4-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img4-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img4.jpg" />
+    <Content Include="Content\marketing\images\gallery\img5-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img5-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img5.jpg" />
+    <Content Include="Content\marketing\images\gallery\img6-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img6-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img6.jpg" />
+    <Content Include="Content\marketing\images\gallery\img7-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img7-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img7.jpg" />
+    <Content Include="Content\marketing\images\gallery\img8-sm.jpg" />
+    <Content Include="Content\marketing\images\gallery\img8-tn.jpg" />
+    <Content Include="Content\marketing\images\gallery\img8.jpg" />
+    <Content Include="Content\marketing\images\icon-award.png" />
+    <Content Include="Content\marketing\images\icon-globe.png" />
+    <Content Include="Content\marketing\images\icon-tools.png" />
+    <Content Include="Content\marketing\images\icons\ajax-loader.gif" />
+    <Content Include="Content\marketing\images\icons\big\icon-addressbook.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-alert.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-android.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-applications.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-bag.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-balloons.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-blocks.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-brush.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-bubbles.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-calculator.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-calendar.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-camera.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-chart.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-clock.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-computer.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-create.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-cup.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-cut.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-docs.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-dribbble.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-facebook.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-filmstrip.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-flag.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-folder.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-globe.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-graph.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-headphones.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-home.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-image.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-info.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-ipad.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-iphone.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-key.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-laptop.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-link.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-linkedin.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-list.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-magnify.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-mail.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-marker.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-mastercard.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-mobilephone.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-notebook.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-paperclip.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-paypal.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-pencil.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-phone.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-recycle.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-refresh.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-settings.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-shoppingcart.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-tag.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-timer.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-tools.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-truck.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-twitter.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-user.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-users.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-vimeo.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-visa.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-wordpress.png" />
+    <Content Include="Content\marketing\images\icons\big\icon-youtube.png" />
+    <Content Include="Content\marketing\images\icons\blog-post-icons.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\beige\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\blue\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\brown\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\dark_yellow\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\green\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\maroon\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\navy\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\olive_green\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\orange\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\red\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\sea_green\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\link-arrow-long.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\link-arrow-small.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\colored\violet\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\contact-info-icons.png" />
+    <Content Include="Content\marketing\images\icons\dashed-line-horizontal.png" />
+    <Content Include="Content\marketing\images\icons\dashed-line-vertical.png" />
+    <Content Include="Content\marketing\images\icons\divider-pattern.png" />
+    <Content Include="Content\marketing\images\icons\link-arrow-small-white.png" />
+    <Content Include="Content\marketing\images\icons\link-arrow-small-white2.png" />
+    <Content Include="Content\marketing\images\icons\list-marker-arrow.png" />
+    <Content Include="Content\marketing\images\icons\list-marker-check.png" />
+    <Content Include="Content\marketing\images\icons\list-marker-circle.png" />
+    <Content Include="Content\marketing\images\icons\list-marker-dash.png" />
+    <Content Include="Content\marketing\images\icons\list-marker-square.png" />
+    <Content Include="Content\marketing\images\icons\message-box-close-icons.png" />
+    <Content Include="Content\marketing\images\icons\overlay-icon-link.png" />
+    <Content Include="Content\marketing\images\icons\overlay-icon-video.png" />
+    <Content Include="Content\marketing\images\icons\overlay-icon-zoom.png" />
+    <Content Include="Content\marketing\images\icons\quote.png" />
+    <Content Include="Content\marketing\images\icons\slider-direction-nav.png" />
+    <Content Include="Content\marketing\images\icons\social\apple.png" />
+    <Content Include="Content\marketing\images\icons\social\behance.png" />
+    <Content Include="Content\marketing\images\icons\social\black\apple-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\behance-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\delicious-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\deviantart-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\digg-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\dribbble-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\facebook-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\flickr-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\forrst-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\google-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\google-plus-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\lastfm-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\linkedin-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\myspace-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\picasa-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\pinterest-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\rss-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\skype-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\stumbleupon-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\tumblr-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\twitter-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\vimeo-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\yahoo-black.png" />
+    <Content Include="Content\marketing\images\icons\social\black\youtube-black.png" />
+    <Content Include="Content\marketing\images\icons\social\delicious.png" />
+    <Content Include="Content\marketing\images\icons\social\deviantart.png" />
+    <Content Include="Content\marketing\images\icons\social\digg.png" />
+    <Content Include="Content\marketing\images\icons\social\dribbble.png" />
+    <Content Include="Content\marketing\images\icons\social\facebook.png" />
+    <Content Include="Content\marketing\images\icons\social\flickr.png" />
+    <Content Include="Content\marketing\images\icons\social\forrst.png" />
+    <Content Include="Content\marketing\images\icons\social\google-plus.png" />
+    <Content Include="Content\marketing\images\icons\social\google.png" />
+    <Content Include="Content\marketing\images\icons\social\lastfm.png" />
+    <Content Include="Content\marketing\images\icons\social\linkedin.png" />
+    <Content Include="Content\marketing\images\icons\social\myspace.png" />
+    <Content Include="Content\marketing\images\icons\social\picasa.png" />
+    <Content Include="Content\marketing\images\icons\social\pinterest.png" />
+    <Content Include="Content\marketing\images\icons\social\rss.png" />
+    <Content Include="Content\marketing\images\icons\social\skype.png" />
+    <Content Include="Content\marketing\images\icons\social\stumbleupon.png" />
+    <Content Include="Content\marketing\images\icons\social\tumblr.png" />
+    <Content Include="Content\marketing\images\icons\social\twitter.png" />
+    <Content Include="Content\marketing\images\icons\social\vimeo.png" />
+    <Content Include="Content\marketing\images\icons\social\yahoo.png" />
+    <Content Include="Content\marketing\images\icons\social\youtube.png" />
+    <Content Include="Content\marketing\images\icons\submenu-icons.png" />
+    <Content Include="Content\marketing\images\icons\switcher.png" />
+    <Content Include="Content\marketing\images\icons\toggle-buttons.png" />
+    <Content Include="Content\marketing\images\icons\tweets.png" />
+    <Content Include="Content\marketing\images\logo.png" />
+    <Content Include="Content\marketing\images\logo1.jpg" />
+    <Content Include="Content\marketing\images\logo2.jpg" />
+    <Content Include="Content\marketing\images\logo3.jpg" />
+    <Content Include="Content\marketing\images\logo4.jpg" />
+    <Content Include="Content\marketing\images\logo5.jpg" />
+    <Content Include="Content\marketing\images\logo6.jpg" />
+    <Content Include="Content\marketing\images\member1.jpg" />
+    <Content Include="Content\marketing\images\member10.jpg" />
+    <Content Include="Content\marketing\images\member2.jpg" />
+    <Content Include="Content\marketing\images\member3.jpg" />
+    <Content Include="Content\marketing\images\member4.jpg" />
+    <Content Include="Content\marketing\images\member5.jpg" />
+    <Content Include="Content\marketing\images\member6.jpg" />
+    <Content Include="Content\marketing\images\member7.jpg" />
+    <Content Include="Content\marketing\images\member8.jpg" />
+    <Content Include="Content\marketing\images\member9.jpg" />
+    <Content Include="Content\marketing\images\nacpbmember_logo.gif" />
+    <Content Include="Content\marketing\images\pic-flower-tn.jpg" />
+    <Content Include="Content\marketing\images\pic-flower.jpg" />
+    <Content Include="Content\marketing\images\pic-screenshot.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project1-full.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project1-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project1.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-full-slide1.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-full-slide2.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-full-slide3.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-preview1-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-preview2-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-preview3-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-slide1.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-slide2.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project2-slide3.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project3-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project4-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project5-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project6-full.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project6-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project7-poster.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project7-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project8-preview1-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project8-preview2-420x252.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project8-slide1.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project8-slide2.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project8-slide3.jpg" />
+    <Content Include="Content\marketing\images\portfolio\project9-preview-420x252.jpg" />
+    <Content Include="Content\marketing\images\post-item-preview-1-tn.jpg" />
+    <Content Include="Content\marketing\images\post-item-preview-1.jpg" />
+    <Content Include="Content\marketing\images\post-item-preview-2.jpg" />
+    <Content Include="Content\marketing\images\post-item-preview-3-tn.jpg" />
+    <Content Include="Content\marketing\images\post-item-preview-3.jpg" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\marketing\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-1.jpg" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-2.jpg" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-3.jpg" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-4.jpg" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-5.jpg" />
+    <Content Include="Content\marketing\images\recent-work-item-preview-6.jpg" />
+    <Content Include="Content\marketing\images\service1.jpg" />
+    <Content Include="Content\marketing\images\service2.jpg" />
+    <Content Include="Content\marketing\images\service3.jpg" />
+    <Content Include="Content\marketing\images\service4.jpg" />
+    <Content Include="Content\marketing\images\service5.jpg" />
+    <Content Include="Content\marketing\images\service6.jpg" />
+    <Content Include="Content\marketing\js\custom.js" />
+    <Content Include="Content\marketing\js\detectmobilebrowser.js" />
+    <Content Include="Content\marketing\js\flowplayer.controls.swf" />
+    <Content Include="Content\marketing\js\flowplayer.swf" />
+    <Content Include="Content\marketing\js\html5media.min.js" />
+    <Content Include="Content\marketing\js\html5shiv.js" />
+    <Content Include="Content\marketing\js\jquery.carousel.js" />
+    <Content Include="Content\marketing\js\jquery.carousel.min.js" />
+    <Content Include="Content\marketing\js\jquery.easing.js" />
+    <Content Include="Content\marketing\js\jquery.easing.min.js" />
+    <Content Include="Content\marketing\js\jquery.fitvids.js" />
+    <Content Include="Content\marketing\js\jquery.fitvids.min.js" />
+    <Content Include="Content\marketing\js\jquery.flexslider.js" />
+    <Content Include="Content\marketing\js\jquery.flexslider.min.js" />
+    <Content Include="Content\marketing\js\jquery.masonry.js" />
+    <Content Include="Content\marketing\js\jquery.masonry.min.js" />
+    <Content Include="Content\marketing\js\jquery.min.js" />
+    <Content Include="Content\marketing\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\marketing\js\jquery.prettyPhoto.min.js" />
+    <Content Include="Content\marketing\js\jquery.tweet.js" />
+    <Content Include="Content\marketing\js\jquery.tweet.min.js" />
+    <Content Include="Content\marketing\js\respond.js" />
+    <Content Include="Content\marketing\js\respond.min.js" />
+    <Content Include="Content\marketing\js\selectnav.js" />
+    <Content Include="Content\marketing\js\selectnav.min.js" />
+    <Content Include="Content\marketing\js\switcher.js" />
+    <Content Include="Content\shared\toastr.css" />
+    <Content Include="Content\shared\toastr.min.css" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\alertify.js" />
+    <Content Include="Scripts\App\daycareinator.employees.js" />
+    <Content Include="Scripts\App\daycareinator.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\theme.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\img\sort_asc.png" />
+    <Content Include="Content\bootstrap\img\sort_asc_disabled.png" />
+    <Content Include="Content\bootstrap\img\sort_both.png" />
+    <Content Include="Content\bootstrap\img\sort_desc.png" />
+    <Content Include="Content\bootstrap\img\sort_desc_disabled.png" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\css\AutoFill.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\images\filler.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\css\ColReorder.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\images\insert.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVis.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVisAlt.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\images\button.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\css\dataTables.scroller.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\images\loading-background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools_JUI.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls.swf" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_page.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table_jui.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\favicon.ico" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\App\daycareinator.add-user.js" />
+    <Content Include="Scripts\App\daycareinator.forgot-password.js" />
+    <Content Include="Scripts\App\daycareinator.timecards.js" />
+    <Content Include="Scripts\App\ko.bindingHandlers.js" />
+    <Content Include="Scripts\Marketing\waldencpb.contact.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js.gz" />
+    <Content Include="Content\DataTables-1.9.4\media\images\Sorting icons.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\printer.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\file_types.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\copy document.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\collection.psd" />
+    <Content Include="Scripts\App\daycareinator.children.js" />
+    <Content Include="Content\bootstrap\font\fontawesome-webfont.eot" />
+    <Content Include="Content\bootstrap\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\bootstrap\font\fontawesome-webfont.woff" />
+    <Content Include="Content\bootstrap\font\FontAwesome.otf" />
+    <Content Include="Scripts\App\daycareinator.users.js" />
+    <Content Include="docs\net40\EfficientlyLazy.Crypto.chm" />
+    <Content Include="docs\net35\EfficientlyLazy.Crypto.chm" />
+    <Content Include="docs\net20\EfficientlyLazy.Crypto.chm" />
+    <Content Include="Content\marketing\images\backgrounds\Thumbs.db" />
+    <Content Include="Content\marketing\images\blog\Thumbs.db" />
+    <Content Include="Content\marketing\images\gallery\Thumbs.db" />
+    <Content Include="Content\marketing\images\icons\Thumbs.db" />
+    <Content Include="Content\marketing\images\portfolio\Thumbs.db" />
+    <Content Include="Content\marketing\images\prettyPhoto\facebook\Thumbs.db" />
+    <Content Include="Content\marketing\images\Thumbs.db" />
+    <Content Include="Content\shared\toastr.less" />
+    <None Include="Properties\PublishProfiles\WaldenCPB.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\App\notification.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\ZeroClipboard.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\knockout-datatables.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout.validation.debug.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\numeral.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Unity.Mvc4.README.txt" />
+    <Content Include="Unity.WebAPI.README.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Timecards\Index.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Account\InvalidToken.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Children\Index.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Shared\_WidgetBodyLoading.cshtml" />
+    <Content Include="Views\Shared\_UnauthorizedLayout.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Shared\_MarketingLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Daycareinator.Data.Entities\Daycareinator.Data.Entities.csproj">
+      <Project>{05544294-1795-43b2-9bf5-2d790a77a8cf}</Project>
+      <Name>Daycareinator.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Daycareinator.Data\Daycareinator.Data.csproj">
+      <Project>{76aefd15-44bd-4727-af7a-43a8a8e44153}</Project>
+      <Name>Daycareinator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Daycareinator.Domain\Daycareinator.Domain.csproj">
+      <Project>{a0e7ec23-d3e7-4aa3-bbad-90fa45a6ea50}</Project>
+      <Name>Daycareinator.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>54979</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9667/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

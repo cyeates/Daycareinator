@@ -1,0 +1,6 @@
+﻿User-agent: *
+Disallow: /Account/
+Disallow: /Children/
+Disallow: /Employees/
+Disallow: /Timecards/
+Disallow: /Users/

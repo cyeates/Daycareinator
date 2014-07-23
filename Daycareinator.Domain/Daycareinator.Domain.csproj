@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0E7EC23-D3E7-4AA3-BBAD-90FA45A6EA50}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Daycareinator.Domain</RootNamespace>
+    <AssemblyName>Daycareinator.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EfficientlyLazy.Crypto">
+      <HintPath>..\packages\EfficientlyLazy.Crypto.0.9.2\lib\net40\EfficientlyLazy.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.4.0.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc">
+      <HintPath>..\packages\FluentValidation.MVC4.4.0.0.0\lib\Net40\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.1.1.1\lib\net40\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\TimecardDto.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Notifications\Email.cs" />
+    <Compile Include="Notifications\SendGrid.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ChildrenService.cs" />
+    <Compile Include="Services\ClientsService.cs" />
+    <Compile Include="Services\EmployeesService.cs" />
+    <Compile Include="Services\EmployeeTimecardService.cs" />
+    <Compile Include="Services\InvitationService.cs" />
+    <Compile Include="Services\PasswordResetService.cs" />
+    <Compile Include="Services\RecordsService.cs" />
+    <Compile Include="Validation\UserAccessToChildValidator.cs" />
+    <Compile Include="Services\UsersService.cs" />
+    <Compile Include="ValidationResult.cs" />
+    <Compile Include="Validation\UserAccessToEmployeeValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Daycareinator.Data.Entities\Daycareinator.Data.Entities.csproj">
+      <Project>{05544294-1795-43b2-9bf5-2d790a77a8cf}</Project>
+      <Name>Daycareinator.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Daycareinator.Data\Daycareinator.Data.csproj">
+      <Project>{76aefd15-44bd-4727-af7a-43a8a8e44153}</Project>
+      <Name>Daycareinator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Daycareinator.Resources\Daycareinator.Resources.csproj">
+      <Project>{246b0e6c-ab44-4e8c-b39a-d3b1de13e0b8}</Project>
+      <Name>Daycareinator.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="docs\net20\EfficientlyLazy.Crypto.chm" />
+    <None Include="docs\net35\EfficientlyLazy.Crypto.chm" />
+    <None Include="docs\net40\EfficientlyLazy.Crypto.chm" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
